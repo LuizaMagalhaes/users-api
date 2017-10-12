@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def inactivate_user
     self.status = "inactive"
   end
+
+  def activate
+    self.update(status: "activated")
+  end
 end
