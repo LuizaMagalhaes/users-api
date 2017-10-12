@@ -1,10 +1,14 @@
-<h1><%= flash[:success] %></h1>
-<h2> All Users </h2><br>
-<div class="row">
-  <% @users.each do |user| %>
-    <div class="col-sm-4">
-      <h4><%= link_to user.name, user %></h4>
-      <b>Email:</b> <%= user.email %><br>
-    </div >
-  <% end %>
+<h4><%= flash[:success] %></h4>
+<h4><%= flash[:notice] %></h4>
+ <%= link_to "New user", new_user_path %>
+<div class="container">
+ <h2> All Users </h2><br>
+ <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-sm-4">
+        <h2><%= link_to user.name, user %></h2>
+        <b>Email:</b> <%= user.email %><br>
+      </div >
+    <% end %>
+  </div>
 </div>

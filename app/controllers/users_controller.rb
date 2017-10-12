@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -39,10 +40,10 @@ class UsersController < ApplicationController
     if @user.status == "inactive"
       @user.destroy
       flash[:success] = "User deleted with success"
-      redirect_to users_path
     else
       flash[:notice] = "An active user cannot be deleted"
     end
+      redirect_to users_path
   end
 
   def activate
@@ -53,6 +54,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone, :cpf)
+    params.require(:user).permit(:name, :email, :phone, :cpf, :status)
   end
 end
