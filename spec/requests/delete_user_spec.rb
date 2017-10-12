@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Delete User", type: :request do
   before do
-    @user = User.create( name: "Harry Potter",
+    @user = User.create(name: "Harry Potter",
                         email: "harry@test.com",
                         phone: "12345678901",
                         cpf: "12345678901")
@@ -24,16 +24,15 @@ RSpec.describe "Delete User", type: :request do
 
 
   context "Failure" do
-    it "should no delete a active user" do
+    it "should not delete a active user" do
       @user.activate
 
       delete "/users/#{@user.id}"
 
       expect(User.count).to eq(1)
-
     end
 
-    it "should show a error  message" do
+    it "should show a error message" do
       @user.activate
 
       delete "/users/#{@user.id}"

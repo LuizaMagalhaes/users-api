@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Update Users", type: :request do
   before do
-    @user = User.create( name: "Harry Potter",
+    @user = User.create(name: "Harry Potter",
                         email: "harry@test.com",
                         phone: "12345678901",
                         cpf: "12345678901")
@@ -11,7 +11,6 @@ RSpec.describe "Update Users", type: :request do
   describe "PUT #update" do
     context "Success" do
       it "Should update the user" do
-
         put "/users/#{@user.id}", params: { :user => { :name => "Thiago Potter" } }
 
         last_user = User.last
@@ -22,7 +21,6 @@ RSpec.describe "Update Users", type: :request do
 
     context "Failure" do
       it "should not update user" do
-
         put "/users/#{@user.id}", params: { :user => { :name => "" } }
 
         last_user = User.last
