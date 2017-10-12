@@ -4,7 +4,7 @@ RSpec.describe "Update Users", type: :request do
   before do
     @user = User.create( name: "Harry Potter",
                         email: "harry@test.com",
-                        phone: "123456789",
+                        phone: "12345678901",
                         cpf: "12345678901")
   end
 

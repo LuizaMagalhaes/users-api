@@ -5,7 +5,7 @@ RSpec.describe "Create user", type: :request do
     it "should create a user" do
       user_params = { user: { name: "Harry Potter",
                               email: "harry@test.com",
-                              phone: "123456789",
+                              phone: "12345678901",
                               cpf: "12345678901"}}
 
       post "/users", params: user_params
@@ -16,7 +16,7 @@ RSpec.describe "Create user", type: :request do
     it "should be inactive" do
       user_params = { user: { name: "Harry Potter",
                               email: "harry@test.com",
-                              phone: "123456789",
+                              phone: "12345678901",
                               cpf: "12345678901"}}
 
       post "/users", params: user_params
@@ -31,7 +31,7 @@ RSpec.describe "Create user", type: :request do
     it "should not create a user" do
       user_params = { user: { name: "",
                               email: "harry@test.com",
-                              phone: "123456789",
+                              phone: "12345678901",
                               cpf: "12345678901"}}
 
       post "/users", params: user_params

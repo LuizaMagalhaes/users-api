@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "An active user cannot be deleted"
     end
-      redirect_to users_path
+    redirect_to users_path
   end
 
   def activate

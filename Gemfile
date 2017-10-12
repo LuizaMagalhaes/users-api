@@ -38,10 +38,12 @@ gem 'jquery-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
+
   gem 'rspec-rails', '~> 3.6'
   gem 'capybara'
   gem 'pry'
-  gem 'factory_girl'
 end
 
 group :development do

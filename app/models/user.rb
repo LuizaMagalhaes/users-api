@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  validates :name,  presence: true
-  validates :email, presence: true
-  validates :phone, presence: true
-  validates :cpf,   presence: true
+  validates :name, :email, :phone, :cpf,   presence: true
+  validates :cpf, length: {is: 11}
+  validates :phone, length: {is: 11}
+  validates :name, :email, length: {minimum: 3}
+
 
   before_create :inactivate_user
 

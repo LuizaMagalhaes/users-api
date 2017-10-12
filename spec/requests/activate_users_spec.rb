@@ -3,12 +3,11 @@ require "rails_helper"
 RSpec.describe "Activate users", type: :request do
   context "Success" do
     before do
-      @user = User.create( name: "Harry Potter",
+      @user = User.create(name: "Harry Potter",
                           email: "harry@test.com",
-                          phone: "123456789",
-                          cpf: "12345678901")
-
-
+                          phone: "12345678901",
+                          cpf: "12345678901",
+                          status: "inactive")
     end
 
     it "Activates user" do
