@@ -14,11 +14,29 @@ RSpec.describe "Create user", type: :request do
     end
 
     it "should be inactive" do
+      user_params = { user: { name: "Harry Potter",
+                              email: "harry@test.com",
+                              phone: "123456789",
+                              cpf: "12345678901"}}
+
+      post "/users", params: user_params
+
+      last_user = User.last
+      expect(last_user.status).to eq("inactive")
+
     end
   end
 
   context "Failure" do
     it "should not create a user" do
+      user_params = { user: { name: "",
+                              email: "harry@test.com",
+                              phone: "123456789",
+                              cpf: "12345678901"}}
+
+      post "/users", params: user_params
+
+      expect(User.count).to eq(0)
     end
   end
 end
