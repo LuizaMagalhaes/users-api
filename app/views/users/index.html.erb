@@ -1,0 +1,9 @@
+<h2> All Users </h2><br>
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-sm-4">
+      <h4><%= link_to user.name, user %></h4>
+      <b>Email:</b> <%= user.email %><br>
+    </div >
+  <% end %>
+</div>
