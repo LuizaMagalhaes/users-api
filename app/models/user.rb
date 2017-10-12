@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :phone, length: { is: 11 }
   validates :name, :email, length: { minimum: 3 }
 
-  before_create :inactivate_user
+  before_create :inactivate
 
   def inactivate
     self.status = "inactive"
