@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Activate users" do
+RSpec.describe "Activate users", type: :request do
   context "Success" do
     before do
       @user = User.create( name: "Harry Potter",

@@ -34,6 +34,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user.status == "inactive"
+      @user.destroy
+      flash[:success] = "User deleted with success"
+      redirect_to users_path
+    else
+      flash[:notice] = "An active user cannot be deleted"
+    end
+  end
+
   def activate
     @user = User.find(params[:id])
     @user.activate

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Update Users" do
+RSpec.describe "Update Users", type: :request do
   before do
     @user = User.create( name: "Harry Potter",
                         email: "harry@test.com",
